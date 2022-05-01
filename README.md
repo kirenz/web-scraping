@@ -1,5 +1,7 @@
 # Web Scraping
  
+ Welcome :wave: 
+ 
  This repo contains several web scraping tutorials.
 
 Let's start with the basics of web scraping: HTML & CSS:
