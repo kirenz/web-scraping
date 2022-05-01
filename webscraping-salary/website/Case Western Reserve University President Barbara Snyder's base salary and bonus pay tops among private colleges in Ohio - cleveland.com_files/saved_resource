@@ -1,0 +1,85 @@
+ 
+
+ 
+ 
+
+
+
+  
+
+
+
+
+document.write('<script type="text/javascript" src="//static.advance.net/static/common/js/libs/jquery-1.8.2.min.js"></scr' + 'ipt><script type="text/javascript" src="//static.advance.net/static/common/js/libs/modernizr-2.6.2.min.js"></scr' + 'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="//static.advance.net/static/classifieds/realestate/css/showcase-rectangle.css" />');
+document.write('<script type="text/javascript">$(document).ready(function() {'); 
+document.write('$(".showcase-ad-rectangle").click(function() {if ($(this).data("source_id")) {');
+document.write('processCommLink($(this).data("source_id"),$(this).data("customer_id"),$(this).data("ad_id"),$(this).data("zip"));} else {');
+document.write('processLink($(this).data("ad_id"),$(this).data("category_id"),$(this).data("customer_id"),$(this).data("broker_id"),$(this).data("zip"));}');
+document.write('window.open($(this).data("href"), "_blank");return false;});');
+document.write('function dynamicReportingCrumb(adcat_id,cust_id,broker_id,ad_id,pc) {');
+document.write('var TRsrc = "//report-re.cleveland.com/images/mdwtc/MDRE_SITE/" + adcat_id + ".gif?aid="+cust_id+";bid="+broker_id+";lid="+ad_id+";pc="+pc;');
+document.write('if (adcat_id) insertTrackingElement(TRsrc);}');
+document.write('function dynamicApartmentCrumb(source_id,mgt_co_id,com_id,pc) {');
+document.write('var trackingURL = "//report-re.cleveland.com/images/mdwtc/MDAPT_SITE/" + source_id + ".gif?com_id=" + com_id + ";mgmt_co_id=" + mgt_co_id + ";pc=" + pc;');
+document.write('if (source_id) insertTrackingElement(trackingURL);}');
+document.write('function insertTrackingElement (url) {');
+document.write('var element;');
+document.write('element = document.createElement("img");');
+document.write('element.setAttribute("src", url);');
+document.write('element.setAttribute("border", "0");');
+document.write('element.setAttribute("height", "1");');
+document.write('element.setAttribute("width", "1");');
+document.write('document.body.insertBefore(element,null);');
+document.write('}function processLink (ad_id,category_id,customer_id,broker_id,ad_zip) {dynamicReportingCrumb(category_id,customer_id,broker_id,ad_id,"483");}');
+document.write('function processCommLink (source_id,mgt_co_id,com_id,ad_zip) {dynamicApartmentCrumb(source_id,mgt_co_id,com_id,"485");}');
+document.write('});');
+document.write('</sc' + 'ript>');
+
+	<!-- attempt 1 -->
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			document.write('<div class="showcase-ad-rectangle" data-href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsv_zMZpKXoVBNmJMW1kF4l25YwFZaItV-dhip4en7cLHcQWKM7eLvOpQVLm1pQk6z0YCh-MpzQ9nKVQKUdGHJI52VA7nmqL_b-lIqqxkt2SdEOAOqIX0PB3vpyismzI_FgtYDrr_w365fcEflxRJyBoAuGV3UL6UqgBruWYrZ4jjeIQjVLSrFKFqrfVI6s9IDTCu6gicWhvl-8m3ujQTR5nQfR_gaskgtN7VNv5P8NgtHyIUP0k3vyeMT7omTTX9Nv7hkV0UZkaKApWWbgfLgysOrF7WFRECo3q8tI2kUyOzD6hAIh8HrQoZIuB9IavTmP1lBg0nA&sig=Cg0ArKJSzL7sSIljw4mNEAE&urlfix=1&adurl=https://bcp.crwdcntrl.net/5/c=931/b=10655343?https://realestate.cleveland.com/search/?address=44142&show_radius=false&list_type=rentals&detail_page=188226758&showcase=true" data-ad_id="188226758" data-source_id="188208193"  data-customer_id="920530" data-zip="44142">');
+		document.write('<div class="top-header">');
+  		document.write('<div class="wrap-logo"><img src="//static.advance.net/static/classifieds/shared/cleve/img/logo-tiny.png" class="logo-s"/></div>');
+		document.write('<div class="re-label"><p>Real Estate</p></div>');
+		document.write('<div class="clear"></div>');
+		document.write('</div><div class="clear"></div>');
+		document.write('<div class="showcase-listings">');
+			document.write('<div class="s-image" style="background-image: url(//classimage.advance.net/classifieds/classre/width245/img/images/cleve/cl_apartment_communities/mdControlled/ad_image/997342152.jpg);">');
+				document.write('<div class="topbarbg">');
+					document.write('<p class="floatedlabel">For Rent</p>');
+					document.write('<div class="clear"></div><div class="s-details">');
+						document.write('<span class="location">Brook Park, OH</span>');
+							document.write('<span class="divider">|</span>');
+							document.write('<span class="bed-bath">2-3 Beds, 1 Bath</span>');
+					document.write('</div></div>');          
+					document.write('<div class="logo-name">');
+								document.write('<img src="//images-re.cleveland.com/images/cleve/cl_apartment_communities/mdControlled/customer_image/87732266.gif">');
+								document.write('<p class="commu_name"><span>Glenbrook Townhouses</span></p>');
+					document.write('</div>');
+						document.write('<img src="//report-re.cleveland.com/images/mdwtc/MDAPT_SITE/188208193.gif?com_id=188226758;mgmt_co_id=920530;pc=484;" width="1" height="1" border="0">');
+			document.write('</div>');
+		document.write('</div>');
+  

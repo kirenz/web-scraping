@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://cdn.concert.io/lib/bids/sync.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Concert Bidding Service Sync</title>
+    <script src="./js.cookie.min.js"></script>
+    <script src="./browserify-consent-string.js"></script>
+  </head>
+  <body marginwidth="0" marginheight="0">
+    <script>
+     var cookieTTLInDays = 30;
+
+     /* Purposes for which we require consent, for our usage; as listed in
+      * "Appendix A, Section B: Purposes":
+      *   https://iabeurope.eu/wp-content/uploads/2019/08/IABEurope_TransparencyConsentFramework_v1-1_policy_FINAL.pdf
+      */
+     var requiredGdprPurposes = [1, 2, 3, 4, 5];
+
+     function logger() {
+       if (/localhost/.test(window.location.href)) {
+         console.log.apply(console, ["Concert User Sync:"].concat(arguments));
+       }
+     }
+
+     function fetchPermutiveSegments() {
+       logger("Fetching Permutive segments");
+
+       var permutiveProjectId = "d2fb08da-1c03-4c8a-978f-ad8a96b4c31f";
+
+       var request = new XMLHttpRequest();
+
+       var PERMUTIVE_LIMIT = 100;
+
+       request.open("GET", `https://${permutiveProjectId}.partner.permutive.app/sync/_pdfps`, true);
+       request.withCredentials = true;
+       request.onload = () => {
+         if (request.status >= 200 && request.status < 400) {
+           try {
+             var segments = JSON.parse(decodeURIComponent(request.response) || "[]");
+             logger("Setting Permutive cookies on Concert");
+             Cookies.set("c_psg", segments.slice(0, PERMUTIVE_LIMIT).join(","), { expires: cookieTTLInDays });
+           } catch (error) {
+             console.log("Concert Sync Error", error);
+           }
+         } else {
+           console.log("Concert Sync Error", request.status);
+         }
+       };
+
+       request.onerror = () => logger("Permutive request failed.");
+       request.send();
+     }
+
+     function uspConsentPreventsSync(uspConsent) {
+       /* If US Privacy String contains a `N` in the third character
+        * (of a v1 consent string), then we will not sync. Otherwise,
+        * we will.
+        */
+       var disallowed = (uspConsent && uspConsent[0] == '1' && uspConsent[2].toUpperCase() == 'N')
+
+       logger(disallowed ? "uspConsent *prevents* usersync" : "uspConsent *allows* usersync")
+
+       return disallowed;
+     }
+
+     function gdprConsentPreventsSync(gdprConsent) {
+       if (!gdprConsent) {
+         return false;
+       }
+
+       try {
+         var gdprConsentData = new ConsentString(gdprConsent);
+         logger('gdprConsentData', gdprConsentData);
+         logger('getPurposesAllowed', gdprConsentData.getPurposesAllowed());
+       } catch (e) {
+         // If something's wrong, consider this blocked
+         console.log('Error decoding GDPR consent string', e);
+         return true;
+       }
+
+       var disallowedPurposes = [];
+       requiredGdprPurposes.forEach(purposeId => {
+         if (!gdprConsentData.isPurposeAllowed(purposeId)) {
+           disallowedPurposes.push(purposeId);
+         }
+       });
+
+       if (disallowedPurposes.length > 0) {
+         logger('Disallowed purposes:', disallowedPurposes);
+         return true;
+       } else {
+         logger('gdprConsent permits all necessary purposes');
+         return false;
+       }
+     }
+
+     function shouldPerformUserSync() {
+       var params = new URLSearchParams(document.location.search);
+
+       var uspConsent = params.get('usp_consent');
+       var gdprApplies = params.get('gdpr_applies');
+       var gdprConsent = params.get('gdpr_consent');
+
+       logger('uspConsent', uspConsent);
+       logger('gdprApplies', gdprApplies);
+       logger('gdprConsent', gdprConsent);
+
+       if (uspConsentPreventsSync(uspConsent)) {
+         logger('uspConsent says no');
+         return false;
+       }
+
+       /* If "GDPR applies?" flag exists, and is "false", we can say it's safe to sync */
+       if (gdprApplies == "0" ) {
+         logger("gdprApplies says it doesn't apply");
+         return true;
+       }
+
+       if (gdprConsentPreventsSync(gdprConsent)) {
+         logger("gdprConsent disallows usersync");
+         return false;
+       }
+
+       logger("nothing stopping usersync");
+       return true;
+     }
+
+     try {
+       if (shouldPerformUserSync()) {
+         logger("Performing user sync");
+         fetchPermutiveSegments();
+       } else {
+         logger("Not performing usersync");
+       }
+     } catch (e) {
+       console.log("Concert Sync Error", e);
+     }
+    </script>
+  
+
+</body></html>

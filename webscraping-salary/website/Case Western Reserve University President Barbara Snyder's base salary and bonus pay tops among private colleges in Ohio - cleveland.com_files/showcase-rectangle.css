@@ -1,0 +1,163 @@
+body { margin: 0; padding: 0; } //served within an iframe so needed to put this
+.showcase-ad-rectangle * { margin: 0; padding: 0; }
+.showcase-ad-rectangle .clear { clear: both; }
+
+.showcase-ad-rectangle { 
+	position: relative; 
+	width: 300px;
+ height: 250px; 
+	display: inline-block;
+	font-family: helvetica; 
+	font-size: 12px; 
+	overflow: hidden; 
+	white-space: nowrap;
+ cursor: pointer;
+}
+
+.showcase-ad-rectangle .top-header {
+ margin: 0;
+ padding: 0;
+ float: left;
+ width: 300px;
+ height: 50px;
+ display: block;
+ background-color: #E1E1E1;
+}
+
+.showcase-ad-rectangle .top-header .wrap-logo {
+ float: left;
+ width: 155px;
+ text-align: center;
+ display: table-cell; 
+	vertical-align: middle;
+	padding: 12px 0px 10px 0;
+}
+
+.showcase-ad-rectangle .top-header .wrap-logo .logo-s {
+ vertical-align: middle;
+ max-height: 30px;
+}
+
+.showcase-ad-rectangle .top-header .re-label {
+ float: left;
+ width: 140px;
+ text-align: center;
+ height: 50px;
+ border-left: 1px solid white;
+ vertical-align: middle;
+}
+
+.showcase-ad-rectangle .top-header .re-label p {
+ margin: 0;
+ padding: 0;
+ vertical-align: middle;
+ font-size: 24px;
+ font-family: helvetica;
+ display: block; 
+	font-style: normal; 
+	font-weight: normal; 
+	color: #333333; 
+	line-height: 52px;
+}
+
+.showcase-ad-rectangle .showcase-listings { 
+	margin: 0; 
+	height: 200px;
+}
+
+.showcase-ad-rectangle .showcase-listings .s-image { 
+	position: relative; 
+	background: #363636 no-repeat center center; 
+	cursor: pointer; 
+ width: 300px;
+ height: 200px;
+ background-size: 100% auto;
+}
+
+.showcase-ad-rectangle .showcase-listings .topbarbg {
+ float: left;
+ margin: 0;
+ width: 100%;
+ height: auto;
+ min-height: 40px;
+ padding: 0 0 3px 0;
+ background-image: url('/static/classifieds/realestate/img/opacitor.png');
+ background-color: transparent;
+}
+
+.showcase-ad-rectangle .showcase-listings .topbarbg .floatedlabel {
+ float: left;
+	display: block;
+	padding: 0;
+	margin: 6px 0 0 6px;
+	color: White;
+	font-size: 12px;
+ line-height: 12px;
+	font-weight: bold;
+	font-family: helvetica;	
+ text-shadow: 1px 1px #242424;
+}
+
+.showcase-ad-rectangle .showcase-listings .s-details {
+ float: left;
+	margin: 0; 
+	padding: 0 0 0 6px;
+ width: 290px;
+ height: auto;
+	font-size: 12px; 
+	line-height: 20px; 
+	text-align: left; 
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff; 
+ font-weight: normal;
+ font-size: 12px;
+ background-color: transparent;
+}
+
+.showcase-ad-rectangle .showcase-listings .s-details span {
+ float: left;
+ text-shadow: -1px 1px black;
+}
+
+.showcase-ad-rectangle .showcase-listings .s-details .divider {
+ position: relative;
+ top: 3px;
+ margin: 0 7px;
+ font-size: 10px;
+ line-height: 13px;
+ font-family: arial;
+}
+
+.showcase-ad-rectangle .showcase-listings .logo-name { 
+	position: absolute;
+	bottom: 0;
+ left: 7px;
+	margin: 0 0 0 -7px; 
+	width: 300px; /* allowance for wider agent photos */
+	height: 50px;
+	cursor: pointer;
+ vertical-align: top;
+ font-weight: bold;
+ font-size: 12px;
+}
+
+.showcase-ad-rectangle .showcase-listings .logo-name img {
+ float: left;
+	max-width: 108px; 
+	height: 50px;
+}
+
+.showcase-ad-rectangle .showcase-listings .logo-name .commu_name {
+ margin: 0 0 0 10px;
+ padding: 0 0 0 10px;
+ font-weight: bold;
+ font-size: 12px;
+ font-family: helvetica;
+ white-space: normal;
+ color: White;
+ height: 44px;
+ display: table-cell;
+ vertical-align: bottom; 
+ line-height: 15px;
+ text-shadow: -1px 1px black;
+}
