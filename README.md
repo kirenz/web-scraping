@@ -13,7 +13,7 @@ In the first tutorial, you will learn the basics of HTML and CSS and how to insp
 
 ### Web scraping quotes
 
- - Colab: [Web scraping tutorial I](https://colab.research.google.com/github/kirenz/web-scraping/blob/main/quotes/web-scraping-quotes.ipynb)
+[![Open Tutorial in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kirenz/web-scraping/blob/main/quotes/web-scraping-quotes.ipynb)
 
 In this tutorial, you will learn how to:
 
@@ -28,7 +28,7 @@ In this tutorial, you will learn how to:
 
 ### Web scraping salary
 
-- [Colab:](https://colab.research.google.com/github/kirenz/web-scraping/blob/main/salary/web-scraping-salary.ipynb)
+[![Open Tutorial in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kirenz/web-scraping/blob/main/salary/web-scraping-salary.ipynb)
 
 In this tutorial, you will learn how to:
 
