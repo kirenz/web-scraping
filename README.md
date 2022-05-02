@@ -4,11 +4,16 @@ Welcome :wave:
  
 This repo contains several web scraping tutorials.
 
+---
+
 ### HTML and CSS
 
 In the first tutorial, you will learn the basics of HTML and CSS and how to inspect websites using CSS selectors (including Google Chrome's DevTools and the SelectorGadget):
 
  - :computer: [Web scraping basics](https://kirenz.github.io/codelabs/codelabs/webscraping/#0)
+
+
+---
 
 
 ### Web scraping quotes
@@ -25,6 +30,8 @@ In this tutorial, you will learn how to:
 
 1. Store the scraped data in a [pandas](https://pandas.pydata.org/) dataframe.
 
+
+---
 
 ### Web scraping salary
 
