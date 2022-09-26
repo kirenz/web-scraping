@@ -9,7 +9,7 @@ This repo contains several web scraping tutorials.
 ### HTML and CSS
 
 
-:computer: [Web scraping basics tutorial](https://kirenz.github.io/codelabs/codelabs/webscraping/#0)
+🖥 [Web scraping basics tutorial](https://kirenz.github.io/codelabs/codelabs/webscraping/#0)
 
 In the first tutorial, you will learn:
 
