@@ -53,4 +53,4 @@ In this tutorial, you will learn how to:
 1. Perform data tidying using [pandas](https://pandas.pydata.org/)
 
 
-1. Visualize data data with [seaborn](https://seaborn.pydata.org/) and [Matplotlib](https://matplotlib.org/)
+1. Visualize data with [seaborn](https://seaborn.pydata.org/) and [Matplotlib](https://matplotlib.org/)
