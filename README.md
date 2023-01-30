@@ -38,6 +38,9 @@ In this tutorial, you will learn how to:
 
 ---
 
+
+<!--
+
 ### Web scraping salary
 
 [![Open Tutorial in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kirenz/web-scraping/blob/main/salary/web-scraping-salary.ipynb)
@@ -54,3 +57,6 @@ In this tutorial, you will learn how to:
 
 
 1. Visualize data with [seaborn](https://seaborn.pydata.org/) and [Matplotlib](https://matplotlib.org/)
+
+
+-->
